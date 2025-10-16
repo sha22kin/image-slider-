@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Different Types of Sliders</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-fluid py-5">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center mb-5">Image Carousel Slider</h1>
+            </div>
+        </div>
+
+        <!-- Original Fade Image Carousel -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-3">1. Fade Image Carousel</h2>
+                <div class="carousel-container">
+                    <div class="carousel-slider" id="carouselSlider">
+                        <div class="slide active">
+                            <img src="https://picsum.photos/800/400?random=1" alt="Slide 1">
+                            <div class="slide-content">
+                                <h3>Beautiful Landscape</h3>
+                                <p>Discover amazing places around the world</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="https://picsum.photos/800/400?random=2" alt="Slide 2">
+                            <div class="slide-content">
+                                <h3>City Skyline</h3>
+                                <p>Modern architecture and urban beauty</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="https://picsum.photos/800/400?random=3" alt="Slide 3">
+                            <div class="slide-content">
+                                <h3>Nature's Wonder</h3>
+                                <p>Experience the beauty of natural landscapes</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="https://picsum.photos/800/400?random=4" alt="Slide 4">
+                            <div class="slide-content">
+                                <h3>Ocean View</h3>
+                                <p>Relaxing coastal scenes and marine life</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-btn prev" id="carouselPrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn next" id="carouselNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="carousel-dots" id="carouselDots"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3D Cube Image Carousel -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-3">2. 3D Cube Image Carousel</h2>
+                <div class="cube-carousel-container">
+                    <div class="cube-carousel" id="cubeCarousel">
+                        <div class="cube-face front">
+                            <img src="https://picsum.photos/500/400?random=5" alt="Cube Slide 1">
+                            <div class="cube-content">
+                                <h3>Front View</h3>
+                                <p>Amazing 3D perspective</p>
+                            </div>
+                        </div>
+                        <div class="cube-face right">
+                            <img src="https://picsum.photos/500/400?random=6" alt="Cube Slide 2">
+                            <div class="cube-content">
+                                <h3>Right View</h3>
+                                <p>Dynamic rotation effect</p>
+                            </div>
+                        </div>
+                        <div class="cube-face back">
+                            <img src="https://picsum.photos/500/400?random=7" alt="Cube Slide 3">
+                            <div class="cube-content">
+                                <h3>Back View</h3>
+                                <p>Immersive experience</p>
+                            </div>
+                        </div>
+                        <div class="cube-face left">
+                            <img src="https://picsum.photos/500/400?random=8" alt="Cube Slide 4">
+                            <div class="cube-content">
+                                <h3>Left View</h3>
+                                <p>360° navigation</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="cube-btn prev" id="cubePrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="cube-btn next" id="cubeNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="cube-dots" id="cubeDots"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide-in Image Carousel -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-3">3. Slide-in Image Carousel</h2>
+                <div class="slidein-carousel-container">
+                    <div class="slidein-carousel" id="slideinCarousel">
+                        <div class="slidein-slide active">
+                            <img src="https://picsum.photos/800/450?random=9" alt="Slide-in 1">
+                            <div class="slidein-content">
+                                <h3>Slide-in Animation</h3>
+                                <p>Smooth horizontal transitions with bounce effects</p>
+                            </div>
+                        </div>
+                        <div class="slidein-slide">
+                            <img src="https://picsum.photos/800/450?random=10" alt="Slide-in 2">
+                            <div class="slidein-content">
+                                <h3>Dynamic Effects</h3>
+                                <p>Engaging animations that captivate your audience</p>
+                            </div>
+                        </div>
+                        <div class="slidein-slide">
+                            <img src="https://picsum.photos/800/450?random=11" alt="Slide-in 3">
+                            <div class="slidein-content">
+                                <h3>Modern Design</h3>
+                                <p>Contemporary styling with smooth interactions</p>
+                            </div>
+                        </div>
+                        <div class="slidein-slide">
+                            <img src="https://picsum.photos/800/450?random=12" alt="Slide-in 4">
+                            <div class="slidein-content">
+                                <h3>Interactive Elements</h3>
+                                <p>User-friendly controls and responsive design</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="slidein-btn prev" id="slideinPrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="slidein-btn next" id="slideinNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="slidein-dots" id="slideinDots"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Zoom Image Carousel -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-3">4. Zoom Image Carousel</h2>
+                <div class="zoom-carousel-container">
+                    <div class="zoom-carousel" id="zoomCarousel">
+                        <div class="zoom-slide active">
+                            <img src="https://picsum.photos/900/500?random=13" alt="Zoom 1">
+                            <div class="zoom-content">
+                                <h3>Zoom Effect</h3>
+                                <p>Scale and fade animations create depth</p>
+                            </div>
+                        </div>
+                        <div class="zoom-slide">
+                            <img src="https://picsum.photos/900/500?random=14" alt="Zoom 2">
+                            <div class="zoom-content">
+                                <h3>Scale Animation</h3>
+                                <p>Dynamic zoom transitions for visual impact</p>
+                            </div>
+                        </div>
+                        <div class="zoom-slide">
+                            <img src="https://picsum.photos/900/500?random=15" alt="Zoom 3">
+                            <div class="zoom-content">
+                                <h3>Fade Transition</h3>
+                                <p>Smooth opacity changes with scaling effects</p>
+                            </div>
+                        </div>
+                        <div class="zoom-slide">
+                            <img src="https://picsum.photos/900/500?random=16" alt="Zoom 4">
+                            <div class="zoom-content">
+                                <h3>Depth Effect</h3>
+                                <p>Layered animations for immersive experience</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="zoom-btn prev" id="zoomPrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="zoom-btn next" id="zoomNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="zoom-dots" id="zoomDots"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flip Image Carousel -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-3">5. Flip Image Carousel</h2>
+                <div class="flip-carousel-container">
+                    <div class="flip-carousel" id="flipCarousel">
+                        <div class="flip-slide active">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img src="https://picsum.photos/600/400?random=17" alt="Flip 1">
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <div class="flip-content">
+                                            <h3>Flip Animation</h3>
+                                            <p>3D card flip effects with smooth transitions</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-slide">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img src="https://picsum.photos/600/400?random=18" alt="Flip 2">
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <div class="flip-content">
+                                            <h3>3D Effects</h3>
+                                            <p>Immersive 3D transformations</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-slide">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img src="https://picsum.photos/600/400?random=19" alt="Flip 3">
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <div class="flip-content">
+                                            <h3>Smooth Transitions</h3>
+                                            <p>Elegant animation sequences</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-slide">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img src="https://picsum.photos/600/400?random=20" alt="Flip 4">
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <div class="flip-content">
+                                            <h3>Interactive Design</h3>
+                                            <p>Engaging user experience</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="flip-btn prev" id="flipPrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="flip-btn next" id="flipNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="flip-dots" id="flipDots"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Parallax Image Carousel -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-3">6. Parallax Image Carousel</h2>
+                <div class="parallax-carousel-container">
+                    <div class="parallax-carousel" id="parallaxCarousel">
+                        <div class="parallax-slide active">
+                            <div class="parallax-bg" style="background-image: url('https://picsum.photos/1000/600?random=21')"></div>
+                            <div class="parallax-content">
+                                <h3>Parallax Effect</h3>
+                                <p>Multi-layer depth with smooth scrolling</p>
+                            </div>
+                        </div>
+                        <div class="parallax-slide">
+                            <div class="parallax-bg" style="background-image: url('https://picsum.photos/1000/600?random=22')"></div>
+                            <div class="parallax-content">
+                                <h3>Depth Animation</h3>
+                                <p>Immersive layered visual experience</p>
+                            </div>
+                        </div>
+                        <div class="parallax-slide">
+                            <div class="parallax-bg" style="background-image: url('https://picsum.photos/1000/600?random=23')"></div>
+                                <div class="parallax-content">
+                                <h3>Dynamic Movement</h3>
+                                <p>Smooth motion creates engagement</p>
+                            </div>
+                        </div>
+                        <div class="parallax-slide">
+                            <div class="parallax-bg" style="background-image: url('https://picsum.photos/1000/600?random=24')"></div>
+                            <div class="parallax-content">
+                                <h3>Visual Storytelling</h3>
+                                <p>Captivating narrative through motion</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="parallax-btn prev" id="parallaxPrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="parallax-btn next" id="parallaxNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="parallax-dots" id="parallaxDots"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Spiral Image Carousel -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-3">7. Spiral Image Carousel</h2>
+                <div class="spiral-carousel-container">
+                    <div class="spiral-carousel" id="spiralCarousel">
+                        <div class="spiral-slide active" data-angle="0">
+                            <img src="https://picsum.photos/300/300?random=25" alt="Spiral 1">
+                            <div class="spiral-content">
+                                <h3>Spiral Motion</h3>
+                                <p>Circular rotation effects</p>
+                            </div>
+                        </div>
+                        <div class="spiral-slide" data-angle="90">
+                            <img src="https://picsum.photos/300/300?random=26" alt="Spiral 2">
+                            <div class="spiral-content">
+                                <h3>360° Rotation</h3>
+                                <p>Dynamic circular navigation</p>
+                            </div>
+                        </div>
+                        <div class="spiral-slide" data-angle="180">
+                            <img src="https://picsum.photos/300/300?random=27" alt="Spiral 3">
+                            <div class="spiral-content">
+                                <h3>Orbital Movement</h3>
+                                <p>Elegant circular transitions</p>
+                            </div>
+                        </div>
+                        <div class="spiral-slide" data-angle="270">
+                            <img src="https://picsum.photos/300/300?random=28" alt="Spiral 4">
+                            <div class="spiral-content">
+                                <h3>Circular Flow</h3>
+                                <p>Smooth orbital animations</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="spiral-btn prev" id="spiralPrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="spiral-btn next" id="spiralNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="spiral-dots" id="spiralDots"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Accordion Image Carousel -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-3">8. Accordion Image Carousel</h2>
+                <div class="accordion-carousel-container">
+                    <div class="accordion-carousel" id="accordionCarousel">
+                        <div class="accordion-slide active">
+                            <img src="https://picsum.photos/400/500?random=29" alt="Accordion 1">
+                            <div class="accordion-content">
+                                <h3>Accordion Effect</h3>
+                                <p>Expand and collapse animations</p>
+                            </div>
+                        </div>
+                        <div class="accordion-slide">
+                            <img src="https://picsum.photos/400/500?random=30" alt="Accordion 2">
+                            <div class="accordion-content">
+                                <h3>Flexible Layout</h3>
+                                <p>Dynamic width adjustments</p>
+                            </div>
+                        </div>
+                        <div class="accordion-slide">
+                            <img src="https://picsum.photos/400/500?random=31" alt="Accordion 3">
+                            <div class="accordion-content">
+                                <h3>Smooth Expansion</h3>
+                                <p>Fluid width transitions</p>
+                            </div>
+                        </div>
+                        <div class="accordion-slide">
+                            <img src="https://picsum.photos/400/500?random=32" alt="Accordion 4">
+                            <div class="accordion-content">
+                                <h3>Interactive Design</h3>
+                                <p>Engaging user interactions</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="accordion-btn prev" id="accordionPrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="accordion-btn next" id="accordionNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="accordion-dots" id="accordionDots"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Magnetic Image Carousel -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-3">9. Magnetic Image Carousel</h2>
+                <div class="magnetic-carousel-container">
+                    <div class="magnetic-carousel" id="magneticCarousel">
+                        <div class="magnetic-slide active">
+                            <img src="https://picsum.photos/500/400?random=33" alt="Magnetic 1">
+                            <div class="magnetic-content">
+                                <h3>Magnetic Effect</h3>
+                                <p>Attraction and repulsion animations</p>
+                            </div>
+                        </div>
+                        <div class="magnetic-slide">
+                            <img src="https://picsum.photos/500/400?random=34" alt="Magnetic 2">
+                            <div class="magnetic-content">
+                                <h3>Physics Simulation</h3>
+                                <p>Realistic magnetic field effects</p>
+                            </div>
+                        </div>
+                        <div class="magnetic-slide">
+                            <img src="https://picsum.photos/500/400?random=35" alt="Magnetic 3">
+                            <div class="magnetic-content">
+                                <h3>Dynamic Forces</h3>
+                                <p>Interactive magnetic interactions</p>
+                            </div>
+                        </div>
+                        <div class="magnetic-slide">
+                            <img src="https://picsum.photos/500/400?random=36" alt="Magnetic 4">
+                            <div class="magnetic-content">
+                                <h3>Field Animation</h3>
+                                <p>Fluid magnetic field movements</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="magnetic-btn prev" id="magneticPrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="magnetic-btn next" id="magneticNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="magnetic-dots" id="magneticDots"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Particle Image Carousel -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-3">10. Particle Image Carousel</h2>
+                <div class="particle-carousel-container">
+                    <div class="particle-carousel" id="particleCarousel">
+                        <div class="particle-slide active">
+                            <img src="https://picsum.photos/700/500?random=37" alt="Particle 1">
+                            <div class="particle-content">
+                                <h3>Particle Effects</h3>
+                                <p>Floating elements and animations</p>
+                            </div>
+                            <div class="particles">
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                            </div>
+                        </div>
+                        <div class="particle-slide">
+                            <img src="https://picsum.photos/700/500?random=38" alt="Particle 2">
+                            <div class="particle-content">
+                                <h3>Floating Elements</h3>
+                                <p>Dynamic particle movements</p>
+                            </div>
+                            <div class="particles">
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                            </div>
+                        </div>
+                        <div class="particle-slide">
+                            <img src="https://picsum.photos/700/500?random=39" alt="Particle 3">
+                            <div class="particle-content">
+                                <h3>Dynamic Animation</h3>
+                                <p>Interactive particle systems</p>
+                            </div>
+                            <div class="particles">
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                            </div>
+                        </div>
+                        <div class="particle-slide">
+                            <img src="https://picsum.photos/700/500?random=40" alt="Particle 4">
+                            <div class="particle-content">
+                                <h3>Visual Effects</h3>
+                                <p>Immersive particle experiences</p>
+                            </div>
+                            <div class="particles">
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="particle-btn prev" id="particlePrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="particle-btn next" id="particleNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="particle-dots" id="particleDots"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Morphing Image Carousel -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-3">11. Morphing Image Carousel</h2>
+                <div class="morphing-carousel-container">
+                    <div class="morphing-carousel" id="morphingCarousel">
+                        <div class="morphing-slide active">
+                            <img src="https://picsum.photos/800/500?random=41" alt="Morphing 1">
+                            <div class="morphing-content">
+                                <h3>Shape Morphing</h3>
+                                <p>Dynamic shape transformations</p>
+                            </div>
+                            <div class="morphing-shapes">
+                                <div class="shape circle"></div>
+                                <div class="shape triangle"></div>
+                                <div class="shape square"></div>
+                            </div>
+                        </div>
+                        <div class="morphing-slide">
+                            <img src="https://picsum.photos/800/500?random=42" alt="Morphing 2">
+                            <div class="morphing-content">
+                                <h3>Fluid Transitions</h3>
+                                <p>Smooth geometric transformations</p>
+                            </div>
+                            <div class="morphing-shapes">
+                                <div class="shape circle"></div>
+                                <div class="shape triangle"></div>
+                                <div class="shape square"></div>
+                            </div>
+                        </div>
+                        <div class="morphing-slide">
+                            <img src="https://picsum.photos/800/500?random=43" alt="Morphing 3">
+                            <div class="morphing-content">
+                                <h3>Dynamic Forms</h3>
+                                <p>Evolving visual elements</p>
+                            </div>
+                            <div class="morphing-shapes">
+                                <div class="shape circle"></div>
+                                <div class="shape triangle"></div>
+                                <div class="shape square"></div>
+                            </div>
+                        </div>
+                        <div class="morphing-slide">
+                            <img src="https://picsum.photos/800/500?random=44" alt="Morphing 4">
+                            <div class="morphing-content">
+                                <h3>Transformative Design</h3>
+                                <p>Adaptive visual experiences</p>
+                            </div>
+                            <div class="morphing-shapes">
+                                <div class="shape circle"></div>
+                                <div class="shape triangle"></div>
+                                <div class="shape square"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="morphing-btn prev" id="morphingPrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="morphing-btn next" id="morphingNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="morphing-dots" id="morphingDots"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wave Image Carousel -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-3">12. Wave Image Carousel</h2>
+                <div class="wave-carousel-container">
+                    <div class="wave-carousel" id="waveCarousel">
+                        <div class="wave-slide active">
+                            <img src="https://picsum.photos/900/500?random=45" alt="Wave 1">
+                            <div class="wave-content">
+                                <h3>Wave Motion</h3>
+                                <p>Fluid wave animations</p>
+                            </div>
+                            <div class="wave-overlay">
+                                <div class="wave wave1"></div>
+                                <div class="wave wave2"></div>
+                                <div class="wave wave3"></div>
+                            </div>
+                        </div>
+                        <div class="wave-slide">
+                            <img src="https://picsum.photos/900/500?random=46" alt="Wave 2">
+                            <div class="wave-content">
+                                <h3>Fluid Dynamics</h3>
+                                <p>Natural wave patterns</p>
+                            </div>
+                            <div class="wave-overlay">
+                                <div class="wave wave1"></div>
+                                <div class="wave wave2"></div>
+                                <div class="wave wave3"></div>
+                            </div>
+                        </div>
+                        <div class="wave-slide">
+                            <img src="https://picsum.photos/900/500?random=47" alt="Wave 3">
+                            <div class="wave-content">
+                                <h3>Ocean Motion</h3>
+                                <p>Realistic wave effects</p>
+                            </div>
+                            <div class="wave-overlay">
+                                <div class="wave wave1"></div>
+                                <div class="wave wave2"></div>
+                                <div class="wave wave3"></div>
+                            </div>
+                        </div>
+                        <div class="wave-slide">
+                            <img src="https://picsum.photos/900/500?random=48" alt="Wave 4">
+                            <div class="wave-content">
+                                <h3>Liquid Flow</h3>
+                                <p>Smooth wave transitions</p>
+                            </div>
+                            <div class="wave-overlay">
+                                <div class="wave wave1"></div>
+                                <div class="wave wave2"></div>
+                                <div class="wave wave3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="wave-btn prev" id="wavePrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="wave-btn next" id="waveNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="wave-dots" id="waveDots"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Matrix Image Carousel -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-3">13. Matrix Image Carousel</h2>
+                <div class="matrix-carousel-container">
+                    <div class="matrix-carousel" id="matrixCarousel">
+                        <div class="matrix-slide active">
+                            <img src="https://picsum.photos/800/600?random=49" alt="Matrix 1">
+                            <div class="matrix-content">
+                                <h3>Digital Matrix</h3>
+                                <p>Cyberpunk digital effects</p>
+                            </div>
+                            <div class="matrix-code">
+                                <div class="code-line"></div>
+                                <div class="code-line"></div>
+                                <div class="code-line"></div>
+                                <div class="code-line"></div>
+                                <div class="code-line"></div>
+                            </div>
+                        </div>
+                        <div class="matrix-slide">
+                            <img src="https://picsum.photos/800/600?random=50" alt="Matrix 2">
+                            <div class="matrix-content">
+                                <h3>Binary Rain</h3>
+                                <p>Falling code animations</p>
+                            </div>
+                            <div class="matrix-code">
+                                <div class="code-line"></div>
+                                <div class="code-line"></div>
+                                <div class="code-line"></div>
+                                <div class="code-line"></div>
+                                <div class="code-line"></div>
+                            </div>
+                        </div>
+                        <div class="matrix-slide">
+                            <img src="https://picsum.photos/800/600?random=51" alt="Matrix 3">
+                            <div class="matrix-content">
+                                <h3>Cyber Effects</h3>
+                                <p>Futuristic digital overlays</p>
+                            </div>
+                            <div class="matrix-code">
+                                <div class="code-line"></div>
+                                <div class="code-line"></div>
+                                <div class="code-line"></div>
+                                <div class="code-line"></div>
+                                <div class="code-line"></div>
+                            </div>
+                        </div>
+                        <div class="matrix-slide">
+                            <img src="https://picsum.photos/800/600?random=52" alt="Matrix 4">
+                            <div class="matrix-content">
+                                <h3>Digital Realm</h3>
+                                <p>Immersive cyber experience</p>
+                            </div>
+                            <div class="matrix-code">
+                                <div class="code-line"></div>
+                                <div class="code-line"></div>
+                                <div class="code-line"></div>
+                                <div class="code-line"></div>
+                                <div class="code-line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="matrix-btn prev" id="matrixPrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="matrix-btn next" id="matrixNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="matrix-dots" id="matrixDots"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kaleidoscope Image Carousel -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-3">14. Kaleidoscope Image Carousel</h2>
+                <div class="kaleidoscope-carousel-container">
+                    <div class="kaleidoscope-carousel" id="kaleidoscopeCarousel">
+                        <div class="kaleidoscope-slide active">
+                            <img src="https://picsum.photos/600/600?random=53" alt="Kaleidoscope 1">
+                            <div class="kaleidoscope-content">
+                                <h3>Mirror Effects</h3>
+                                <p>Symmetrical kaleidoscope patterns</p>
+                            </div>
+                            <div class="kaleidoscope-pattern">
+                                <div class="pattern-segment"></div>
+                                <div class="pattern-segment"></div>
+                                <div class="pattern-segment"></div>
+                                <div class="pattern-segment"></div>
+                                <div class="pattern-segment"></div>
+                                <div class="pattern-segment"></div>
+                            </div>
+                        </div>
+                        <div class="kaleidoscope-slide">
+                            <img src="https://picsum.photos/600/600?random=54" alt="Kaleidoscope 2">
+                            <div class="kaleidoscope-content">
+                                <h3>Symmetrical Design</h3>
+                                <p>Perfect geometric patterns</p>
+                            </div>
+                            <div class="kaleidoscope-pattern">
+                                <div class="pattern-segment"></div>
+                                <div class="pattern-segment"></div>
+                                <div class="pattern-segment"></div>
+                                <div class="pattern-segment"></div>
+                                <div class="pattern-segment"></div>
+                                <div class="pattern-segment"></div>
+                            </div>
+                        </div>
+                        <div class="kaleidoscope-slide">
+                            <img src="https://picsum.photos/600/600?random=55" alt="Kaleidoscope 3">
+                            <div class="kaleidoscope-content">
+                                <h3>Pattern Evolution</h3>
+                                <p>Dynamic symmetrical transformations</p>
+                            </div>
+                            <div class="kaleidoscope-pattern">
+                                <div class="pattern-segment"></div>
+                                <div class="pattern-segment"></div>
+                                <div class="pattern-segment"></div>
+                                <div class="pattern-segment"></div>
+                                <div class="pattern-segment"></div>
+                                <div class="pattern-segment"></div>
+                            </div>
+                        </div>
+                        <div class="kaleidoscope-slide">
+                            <img src="https://picsum.photos/600/600?random=56" alt="Kaleidoscope 4">
+                            <div class="kaleidoscope-content">
+                                <h3>Visual Harmony</h3>
+                                <p>Mesmerizing pattern sequences</p>
+                            </div>
+                            <div class="kaleidoscope-pattern">
+                                <div class="pattern-segment"></div>
+                                <div class="pattern-segment"></div>
+                                <div class="pattern-segment"></div>
+                                <div class="pattern-segment"></div>
+                                <div class="pattern-segment"></div>
+                                <div class="pattern-segment"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="kaleidoscope-btn prev" id="kaleidoscopePrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="kaleidoscope-btn next" id="kaleidoscopeNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="kaleidoscope-dots" id="kaleidoscopeDots"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Holographic Image Carousel -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-3">15. Holographic Image Carousel</h2>
+                <div class="holographic-carousel-container">
+                    <div class="holographic-carousel" id="holographicCarousel">
+                        <div class="holographic-slide active">
+                            <img src="https://picsum.photos/800/500?random=57" alt="Holographic 1">
+                            <div class="holographic-content">
+                                <h3>3D Hologram</h3>
+                                <p>Futuristic holographic projections</p>
+                            </div>
+                            <div class="holographic-effects">
+                                <div class="holo-line"></div>
+                                <div class="holo-line"></div>
+                                <div class="holo-line"></div>
+                                <div class="holo-line"></div>
+                            </div>
+                        </div>
+                        <div class="holographic-slide">
+                            <img src="https://picsum.photos/800/500?random=58" alt="Holographic 2">
+                            <div class="holographic-content">
+                                <h3>Projection Effects</h3>
+                                <p>Advanced 3D visualization</p>
+                            </div>
+                            <div class="holographic-effects">
+                                <div class="holo-line"></div>
+                                <div class="holo-line"></div>
+                                <div class="holo-line"></div>
+                                <div class="holo-line"></div>
+                            </div>
+                        </div>
+                        <div class="holographic-slide">
+                            <img src="https://picsum.photos/800/500?random=59" alt="Holographic 3">
+                            <div class="holographic-content">
+                                <h3>Sci-Fi Interface</h3>
+                                <p>Immersive holographic experience</p>
+                            </div>
+                            <div class="holographic-effects">
+                                <div class="holo-line"></div>
+                                <div class="holo-line"></div>
+                                <div class="holo-line"></div>
+                                <div class="holo-line"></div>
+                            </div>
+                        </div>
+                        <div class="holographic-slide">
+                            <img src="https://picsum.photos/800/500?random=60" alt="Holographic 4">
+                            <div class="holographic-content">
+                                <h3>Future Tech</h3>
+                                <p>Next-generation visual technology</p>
+                            </div>
+                            <div class="holographic-effects">
+                                <div class="holo-line"></div>
+                                <div class="holo-line"></div>
+                                <div class="holo-line"></div>
+                                <div class="holo-line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="holographic-btn prev" id="holographicPrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="holographic-btn next" id="holographicNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="holographic-dots" id="holographicDots"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Glitch Image Carousel -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-3">16. Glitch Image Carousel</h2>
+                <div class="glitch-carousel-container">
+                    <div class="glitch-carousel" id="glitchCarousel">
+                        <div class="glitch-slide active">
+                            <img src="https://picsum.photos/800/500?random=61" alt="Glitch 1">
+                            <div class="glitch-content">
+                                <h3>Digital Glitch</h3>
+                                <p>Cyberpunk distortion effects</p>
+                            </div>
+                            <div class="glitch-effects">
+                                <div class="glitch-line"></div>
+                                <div class="glitch-line"></div>
+                                <div class="glitch-line"></div>
+                            </div>
+                        </div>
+                        <div class="glitch-slide">
+                            <img src="https://picsum.photos/800/500?random=62" alt="Glitch 2">
+                            <div class="glitch-content">
+                                <h3>Data Corruption</h3>
+                                <p>Futuristic error aesthetics</p>
+                            </div>
+                            <div class="glitch-effects">
+                                <div class="glitch-line"></div>
+                                <div class="glitch-line"></div>
+                                <div class="glitch-line"></div>
+                            </div>
+                        </div>
+                        <div class="glitch-slide">
+                            <img src="https://picsum.photos/800/500?random=63" alt="Glitch 3">
+                            <div class="glitch-content">
+                                <h3>System Error</h3>
+                                <p>Digital malfunction art</p>
+                            </div>
+                            <div class="glitch-effects">
+                                <div class="glitch-line"></div>
+                                <div class="glitch-line"></div>
+                                <div class="glitch-line"></div>
+                            </div>
+                        </div>
+                        <div class="glitch-slide">
+                            <img src="https://picsum.photos/800/500?random=64" alt="Glitch 4">
+                            <div class="glitch-content">
+                                <h3>Matrix Glitch</h3>
+                                <p>Reality distortion effects</p>
+                            </div>
+                            <div class="glitch-effects">
+                                <div class="glitch-line"></div>
+                                <div class="glitch-line"></div>
+                                <div class="glitch-line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="glitch-btn prev" id="glitchPrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="glitch-btn next" id="glitchNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="glitch-dots" id="glitchDots"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Neon Image Carousel -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-3">17. Neon Image Carousel</h2>
+                <div class="neon-carousel-container">
+                    <div class="neon-carousel" id="neonCarousel">
+                        <div class="neon-slide active">
+                            <img src="https://picsum.photos/800/500?random=65" alt="Neon 1">
+                            <div class="neon-content">
+                                <h3>Neon Lights</h3>
+                                <p>Electric glow effects</p>
+                            </div>
+                            <div class="neon-effects">
+                                <div class="neon-ring"></div>
+                                <div class="neon-ring"></div>
+                                <div class="neon-ring"></div>
+                            </div>
+                        </div>
+                        <div class="neon-slide">
+                            <img src="https://picsum.photos/800/500?random=66" alt="Neon 2">
+                            <div class="neon-content">
+                                <h3>Electric Dreams</h3>
+                                <p>Cyberpunk neon aesthetics</p>
+                            </div>
+                            <div class="neon-effects">
+                                <div class="neon-ring"></div>
+                                <div class="neon-ring"></div>
+                                <div class="neon-ring"></div>
+                            </div>
+                        </div>
+                        <div class="neon-slide">
+                            <img src="https://picsum.photos/800/500?random=67" alt="Neon 3">
+                            <div class="neon-content">
+                                <h3>Night City</h3>
+                                <p>Urban neon landscapes</p>
+                            </div>
+                            <div class="neon-effects">
+                                <div class="neon-ring"></div>
+                                <div class="neon-ring"></div>
+                                <div class="neon-ring"></div>
+                            </div>
+                        </div>
+                        <div class="neon-slide">
+                            <img src="https://picsum.photos/800/500?random=68" alt="Neon 4">
+                            <div class="neon-content">
+                                <h3>Electric Pulse</h3>
+                                <p>Dynamic neon animations</p>
+                            </div>
+                            <div class="neon-effects">
+                                <div class="neon-ring"></div>
+                                <div class="neon-ring"></div>
+                                <div class="neon-ring"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="neon-btn prev" id="neonPrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="neon-btn next" id="neonNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="neon-dots" id="neonDots"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Liquid Image Carousel -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-3">18. Liquid Image Carousel</h2>
+                <div class="liquid-carousel-container">
+                    <div class="liquid-carousel" id="liquidCarousel">
+                        <div class="liquid-slide active">
+                            <img src="https://picsum.photos/800/500?random=69" alt="Liquid 1">
+                            <div class="liquid-content">
+                                <h3>Fluid Motion</h3>
+                                <p>Liquid flow animations</p>
+                            </div>
+                            <div class="liquid-effects">
+                                <div class="liquid-blob"></div>
+                                <div class="liquid-blob"></div>
+                                <div class="liquid-blob"></div>
+                            </div>
+                        </div>
+                        <div class="liquid-slide">
+                            <img src="https://picsum.photos/800/500?random=70" alt="Liquid 2">
+                            <div class="liquid-content">
+                                <h3>Water Dynamics</h3>
+                                <p>Natural fluid behavior</p>
+                            </div>
+                            <div class="liquid-effects">
+                                <div class="liquid-blob"></div>
+                                <div class="liquid-blob"></div>
+                                <div class="liquid-blob"></div>
+                            </div>
+                        </div>
+                        <div class="liquid-slide">
+                            <img src="https://picsum.photos/800/500?random=71" alt="Liquid 3">
+                            <div class="liquid-content">
+                                <h3>Mercury Flow</h3>
+                                <p>Metallic liquid effects</p>
+                            </div>
+                            <div class="liquid-effects">
+                                <div class="liquid-blob"></div>
+                                <div class="liquid-blob"></div>
+                                <div class="liquid-blob"></div>
+                            </div>
+                        </div>
+                        <div class="liquid-slide">
+                            <img src="https://picsum.photos/800/500?random=72" alt="Liquid 4">
+                            <div class="liquid-content">
+                                <h3>Fluid Art</h3>
+                                <p>Abstract liquid patterns</p>
+                            </div>
+                            <div class="liquid-effects">
+                                <div class="liquid-blob"></div>
+                                <div class="liquid-blob"></div>
+                                <div class="liquid-blob"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="liquid-btn prev" id="liquidPrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="liquid-btn next" id="liquidNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="liquid-dots" id="liquidDots"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Glass Image Carousel -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-3">19. Glass Image Carousel</h2>
+                <div class="glass-carousel-container">
+                    <div class="glass-carousel" id="glassCarousel">
+                        <div class="glass-slide active">
+                            <img src="https://picsum.photos/800/500?random=73" alt="Glass 1">
+                            <div class="glass-content">
+                                <h3>Glassmorphism</h3>
+                                <p>Modern glass effects</p>
+                            </div>
+                            <div class="glass-effects">
+                                <div class="glass-shard"></div>
+                                <div class="glass-shard"></div>
+                                <div class="glass-shard"></div>
+                            </div>
+                        </div>
+                        <div class="glass-slide">
+                            <img src="https://picsum.photos/800/500?random=74" alt="Glass 2">
+                            <div class="glass-content">
+                                <h3>Crystal Clear</h3>
+                                <p>Transparent design elements</p>
+                            </div>
+                            <div class="glass-effects">
+                                <div class="glass-shard"></div>
+                                <div class="glass-shard"></div>
+                                <div class="glass-shard"></div>
+                            </div>
+                        </div>
+                        <div class="glass-slide">
+                            <img src="https://picsum.photos/800/500?random=75" alt="Glass 3">
+                            <div class="glass-content">
+                                <h3>Frosted Glass</h3>
+                                <p>Elegant transparency</p>
+                            </div>
+                            <div class="glass-effects">
+                                <div class="glass-shard"></div>
+                                <div class="glass-shard"></div>
+                                <div class="glass-shard"></div>
+                            </div>
+                        </div>
+                        <div class="glass-slide">
+                            <img src="https://picsum.photos/800/500?random=76" alt="Glass 4">
+                            <div class="glass-content">
+                                <h3>Reflective Surface</h3>
+                                <p>Mirror-like effects</p>
+                            </div>
+                            <div class="glass-effects">
+                                <div class="glass-shard"></div>
+                                <div class="glass-shard"></div>
+                                <div class="glass-shard"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="glass-btn prev" id="glassPrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="glass-btn next" id="glassNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="glass-dots" id="glassDots"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fire Image Carousel -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-3">20. Fire Image Carousel</h2>
+                <div class="fire-carousel-container">
+                    <div class="fire-carousel" id="fireCarousel">
+                        <div class="fire-slide active">
+                            <img src="https://picsum.photos/800/500?random=77" alt="Fire 1">
+                            <div class="fire-content">
+                                <h3>Flame Effects</h3>
+                                <p>Dynamic fire animations</p>
+                            </div>
+                            <div class="fire-effects">
+                                <div class="flame"></div>
+                                <div class="flame"></div>
+                                <div class="flame"></div>
+                            </div>
+                        </div>
+                        <div class="fire-slide">
+                            <img src="https://picsum.photos/800/500?random=78" alt="Fire 2">
+                            <div class="fire-content">
+                                <h3>Wildfire</h3>
+                                <p>Intense burning effects</p>
+                            </div>
+                            <div class="fire-effects">
+                                <div class="flame"></div>
+                                <div class="flame"></div>
+                                <div class="flame"></div>
+                            </div>
+                        </div>
+                        <div class="fire-slide">
+                            <img src="https://picsum.photos/800/500?random=79" alt="Fire 3">
+                            <div class="fire-content">
+                                <h3>Ember Glow</h3>
+                                <p>Warm glowing effects</p>
+                            </div>
+                            <div class="fire-effects">
+                                <div class="flame"></div>
+                                <div class="flame"></div>
+                                <div class="flame"></div>
+                            </div>
+                        </div>
+                        <div class="fire-slide">
+                            <img src="https://picsum.photos/800/500?random=80" alt="Fire 4">
+                            <div class="fire-content">
+                                <h3>Inferno</h3>
+                                <p>Powerful fire energy</p>
+                            </div>
+                            <div class="fire-effects">
+                                <div class="flame"></div>
+                                <div class="flame"></div>
+                                <div class="flame"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="fire-btn prev" id="firePrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="fire-btn next" id="fireNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="fire-dots" id="fireDots"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ice Image Carousel -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-3">21. Ice Image Carousel</h2>
+                <div class="ice-carousel-container">
+                    <div class="ice-carousel" id="iceCarousel">
+                        <div class="ice-slide active">
+                            <img src="https://picsum.photos/800/500?random=81" alt="Ice 1">
+                            <div class="ice-content">
+                                <h3>Frost Effects</h3>
+                                <p>Crystalline ice formations</p>
+                            </div>
+                            <div class="ice-effects">
+                                <div class="ice-crystal"></div>
+                                <div class="ice-crystal"></div>
+                                <div class="ice-crystal"></div>
+                            </div>
+                        </div>
+                        <div class="ice-slide">
+                            <img src="https://picsum.photos/800/500?random=82" alt="Ice 2">
+                            <div class="ice-content">
+                                <h3>Arctic Chill</h3>
+                                <p>Frozen landscape effects</p>
+                            </div>
+                            <div class="ice-effects">
+                                <div class="ice-crystal"></div>
+                                <div class="ice-crystal"></div>
+                                <div class="ice-crystal"></div>
+                            </div>
+                        </div>
+                        <div class="ice-slide">
+                            <img src="https://picsum.photos/800/500?random=83" alt="Ice 3">
+                            <div class="ice-content">
+                                <h3>Snow Crystals</h3>
+                                <p>Delicate frost patterns</p>
+                            </div>
+                            <div class="ice-effects">
+                                <div class="ice-crystal"></div>
+                                <div class="ice-crystal"></div>
+                                <div class="ice-crystal"></div>
+                            </div>
+                        </div>
+                        <div class="ice-slide">
+                            <img src="https://picsum.photos/800/500?random=84" alt="Ice 4">
+                            <div class="ice-content">
+                                <h3>Winter Magic</h3>
+                                <p>Enchanted ice effects</p>
+                            </div>
+                            <div class="ice-effects">
+                                <div class="ice-crystal"></div>
+                                <div class="ice-crystal"></div>
+                                <div class="ice-crystal"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="ice-btn prev" id="icePrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="ice-btn next" id="iceNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="ice-dots" id="iceDots"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Galaxy Image Carousel -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-3">22. Galaxy Image Carousel</h2>
+                <div class="galaxy-carousel-container">
+                    <div class="galaxy-carousel" id="galaxyCarousel">
+                        <div class="galaxy-slide active">
+                            <img src="https://picsum.photos/800/500?random=85" alt="Galaxy 1">
+                            <div class="galaxy-content">
+                                <h3>Cosmic Journey</h3>
+                                <p>Space exploration effects</p>
+                            </div>
+                            <div class="galaxy-effects">
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                            </div>
+                        </div>
+                        <div class="galaxy-slide">
+                            <img src="https://picsum.photos/800/500?random=86" alt="Galaxy 2">
+                            <div class="galaxy-content">
+                                <h3>Stellar Fields</h3>
+                                <p>Astronomical phenomena</p>
+                            </div>
+                            <div class="galaxy-effects">
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                            </div>
+                        </div>
+                        <div class="galaxy-slide">
+                            <img src="https://picsum.photos/800/500?random=87" alt="Galaxy 3">
+                            <div class="galaxy-content">
+                                <h3>Nebula Dreams</h3>
+                                <p>Interstellar cloud effects</p>
+                            </div>
+                            <div class="galaxy-effects">
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                            </div>
+                        </div>
+                        <div class="galaxy-slide">
+                            <img src="https://picsum.photos/800/500?random=88" alt="Galaxy 4">
+                            <div class="galaxy-content">
+                                <h3>Space Odyssey</h3>
+                                <p>Cosmic adventure effects</p>
+                            </div>
+                            <div class="galaxy-effects">
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="galaxy-btn prev" id="galaxyPrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="galaxy-btn next" id="galaxyNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="galaxy-dots" id="galaxyDots"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Crystal Image Carousel -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-3">23. Crystal Image Carousel</h2>
+                <div class="crystal-carousel-container">
+                    <div class="crystal-carousel" id="crystalCarousel">
+                        <div class="crystal-slide active">
+                            <img src="https://picsum.photos/800/500?random=89" alt="Crystal 1">
+                            <div class="crystal-content">
+                                <h3>Gemstone Effects</h3>
+                                <p>Precious crystal formations</p>
+                            </div>
+                            <div class="crystal-effects">
+                                <div class="crystal-shard"></div>
+                                <div class="crystal-shard"></div>
+                                <div class="crystal-shard"></div>
+                            </div>
+                        </div>
+                        <div class="crystal-slide">
+                            <img src="https://picsum.photos/800/500?random=90" alt="Crystal 2">
+                            <div class="crystal-content">
+                                <h3>Diamond Brilliance</h3>
+                                <p>Sparkling gem effects</p>
+                            </div>
+                            <div class="crystal-effects">
+                                <div class="crystal-shard"></div>
+                                <div class="crystal-shard"></div>
+                                <div class="crystal-shard"></div>
+                            </div>
+                        </div>
+                        <div class="crystal-slide">
+                            <img src="https://picsum.photos/800/500?random=91" alt="Crystal 3">
+                            <div class="crystal-content">
+                                <h3>Prismatic Light</h3>
+                                <p>Rainbow crystal effects</p>
+                            </div>
+                            <div class="crystal-effects">
+                                <div class="crystal-shard"></div>
+                                <div class="crystal-shard"></div>
+                                <div class="crystal-shard"></div>
+                            </div>
+                        </div>
+                        <div class="crystal-slide">
+                            <img src="https://picsum.photos/800/500?random=92" alt="Crystal 4">
+                            <div class="crystal-content">
+                                <h3>Mineral Beauty</h3>
+                                <p>Natural crystal aesthetics</p>
+                            </div>
+                            <div class="crystal-effects">
+                                <div class="crystal-shard"></div>
+                                <div class="crystal-shard"></div>
+                                <div class="crystal-shard"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="crystal-btn prev" id="crystalPrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="crystal-btn next" id="crystalNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="crystal-dots" id="crystalDots"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

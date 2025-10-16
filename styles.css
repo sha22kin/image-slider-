@@ -1,0 +1,4337 @@
+/* Custom CSS for Different Types of Image Carousel Sliders */
+
+/* General Styles */
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container-fluid {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+h1 {
+    color: #333;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #555;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #667eea;
+    display: inline-block;
+}
+
+/* 1. Fade Image Carousel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-slider {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.slide-content h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.slide-content p {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #333;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background: white;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-btn.prev {
+    left: 20px;
+}
+
+.carousel-btn.next {
+    right: 20px;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: white;
+    transform: scale(1.2);
+}
+
+/* 2. 3D Cube Image Carousel */
+.cube-carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 500px;
+    perspective: 1200px;
+    perspective-origin: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cube-carousel {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform-origin: center center;
+}
+
+.cube-face {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    backface-visibility: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.cube-face img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cube-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    color: white;
+    padding: 30px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+}
+
+.cube-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.cube-content p {
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.cube-face.front {
+    transform: translateZ(200px);
+}
+
+.cube-face.right {
+    transform: rotateY(90deg) translateZ(200px);
+}
+
+.cube-face.back {
+    transform: rotateY(180deg) translateZ(200px);
+}
+
+.cube-face.left {
+    transform: rotateY(-90deg) translateZ(200px);
+}
+
+.cube-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(102, 126, 234, 0.9);
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: white;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.cube-btn:hover {
+    background: #667eea;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.cube-btn.prev {
+    left: 20px;
+}
+
+.cube-btn.next {
+    right: 20px;
+}
+
+/* Enhanced 3D effects for cube carousel */
+.cube-carousel:hover {
+    transform: rotateY(var(--rotation, 0deg)) rotateX(5deg);
+}
+
+.cube-face:hover {
+    transform: translateZ(220px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive adjustments for cube carousel */
+@media (max-width: 768px) {
+    .cube-carousel {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .cube-face {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .cube-face.front {
+        transform: translateZ(150px);
+    }
+    
+    .cube-face.right {
+        transform: rotateY(90deg) translateZ(150px);
+    }
+    
+    .cube-face.back {
+        transform: rotateY(180deg) translateZ(150px);
+    }
+    
+    .cube-face.left {
+        transform: rotateY(-90deg) translateZ(150px);
+    }
+    
+    .cube-content h3 {
+        font-size: 1.4rem;
+    }
+    
+    .cube-content p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .cube-carousel {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .cube-face {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .cube-face.front {
+        transform: translateZ(125px);
+    }
+    
+    .cube-face.right {
+        transform: rotateY(90deg) translateZ(125px);
+    }
+    
+    .cube-face.back {
+        transform: rotateY(180deg) translateZ(125px);
+    }
+    
+    .cube-face.left {
+        transform: rotateY(-90deg) translateZ(125px);
+    }
+    
+    .cube-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    .cube-btn.prev {
+        left: 10px;
+    }
+    
+    .cube-btn.next {
+        right: 10px;
+    }
+}
+
+.cube-dots {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.cube-dots .dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(102, 126, 234, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cube-dots .dot.active {
+    background: #667eea;
+    transform: scale(1.3);
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+}
+
+/* 3. Slide-in Image Carousel */
+.slidein-carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.slidein-carousel {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slidein-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.slidein-slide.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slidein-slide.prev {
+    transform: translateX(-100%);
+    opacity: 0.3;
+}
+
+.slidein-slide.next {
+    transform: translateX(100%);
+    opacity: 0.3;
+}
+
+.slidein-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slidein-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8));
+    color: white;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.slidein-content h3 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: slideInUp 0.8s ease-out 0.3s both;
+}
+
+.slidein-content p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    animation: slideInUp 0.8s ease-out 0.5s both;
+}
+
+.slidein-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #333;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.slidein-btn:hover {
+    background: white;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.slidein-btn.prev {
+    left: 30px;
+}
+
+.slidein-btn.next {
+    right: 30px;
+}
+
+.slidein-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 10;
+}
+
+.slidein-dots .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slidein-dots .dot.active {
+    background: white;
+    transform: scale(1.3);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* 4. Zoom Image Carousel */
+.zoom-carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+}
+
+.zoom-carousel {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.zoom-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: scale(1.2);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.zoom-slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.zoom-slide.prev {
+    transform: scale(0.8);
+    opacity: 0.3;
+}
+
+.zoom-slide.next {
+    transform: scale(0.8);
+    opacity: 0.3;
+}
+
+.zoom-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.zoom-slide.active img {
+    transform: scale(1.05);
+}
+
+.zoom-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    color: white;
+    padding: 40px;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.6s ease 0.3s;
+}
+
+.zoom-slide.active .zoom-content {
+    transform: translateY(0);
+}
+
+.zoom-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.zoom-content p {
+    font-size: 1.2rem;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.zoom-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: white;
+    transition: all 0.3s ease;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+}
+
+.zoom-btn:hover {
+    background: rgba(0, 0, 0, 0.9);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.zoom-btn.prev {
+    left: 30px;
+}
+
+.zoom-btn.next {
+    right: 30px;
+}
+
+.zoom-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.zoom-dots .dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.zoom-dots .dot.active {
+    background: white;
+    transform: scale(1.3);
+    border-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* 5. Flip Image Carousel */
+.flip-carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 500px;
+    perspective: 1000px;
+}
+
+.flip-carousel {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.flip-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.flip-slide.active {
+    opacity: 1;
+}
+
+.flip-card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.flip-card-front {
+    background-color: #bbb;
+    color: black;
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.flip-card-back {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flip-content {
+    text-align: center;
+    padding: 40px;
+}
+
+.flip-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.flip-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.flip-slide.active .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(102, 126, 234, 0.9);
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: white;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.flip-btn:hover {
+    background: #667eea;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.flip-btn.prev {
+    left: -30px;
+}
+
+.flip-btn.next {
+    right: -30px;
+}
+
+.flip-dots {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.flip-dots .dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(102, 126, 234, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.flip-dots .dot.active {
+    background: #667eea;
+    transform: scale(1.3);
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container-fluid {
+        margin: 10px;
+        padding: 20px;
+    }
+    
+    .carousel-container,
+    .slidein-carousel-container,
+    .zoom-carousel-container {
+        max-width: 100%;
+    }
+    
+    .slide-content h3,
+    .slidein-content h3,
+    .zoom-content h3,
+    .flip-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .slide-content p,
+    .slidein-content p,
+    .zoom-content p,
+    .flip-content p {
+        font-size: 1rem;
+    }
+    
+    .slidein-content {
+        padding: 30px;
+    }
+    
+    .cube-carousel-container {
+        height: 300px;
+    }
+    
+    .zoom-carousel-container {
+        height: 350px;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-btn,
+    .cube-btn,
+    .slidein-btn,
+    .zoom-btn,
+    .flip-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .carousel-btn.prev,
+    .slidein-btn.prev,
+    .zoom-btn.prev {
+        left: 10px;
+    }
+    
+    .carousel-btn.next,
+    .slidein-btn.next,
+    .zoom-btn.next {
+        right: 10px;
+    }
+    
+    .cube-btn.prev,
+    .flip-btn.prev {
+        left: -20px;
+    }
+    
+    .cube-btn.next,
+    .flip-btn.next {
+        right: -20px;
+    }
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.5s ease-in-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in-right {
+    animation: slideInRight 0.5s ease-in-out;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 6. Parallax Image Carousel */
+.parallax-carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.3);
+}
+
+.parallax-carousel {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.parallax-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.parallax-slide.active {
+    opacity: 1;
+}
+
+.parallax-bg {
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    width: 140%;
+    height: 140%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.8s ease-out;
+}
+
+.parallax-slide.active .parallax-bg {
+    transform: scale(1.1);
+}
+
+.parallax-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    color: white;
+    padding: 50px;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.6s ease 0.3s;
+}
+
+.parallax-slide.active .parallax-content {
+    transform: translateY(0);
+}
+
+.parallax-content h3 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.parallax-content p {
+    font-size: 1.3rem;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.parallax-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: white;
+    transition: all 0.3s ease;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+}
+
+.parallax-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: white;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.parallax-btn.prev {
+    left: 30px;
+}
+
+.parallax-btn.next {
+    right: 30px;
+}
+
+.parallax-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.parallax-dots .dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.parallax-dots .dot.active {
+    background: white;
+    transform: scale(1.3);
+    border-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* 7. Spiral Image Carousel */
+.spiral-carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 500px;
+    perspective: 1000px;
+}
+
+.spiral-carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.spiral-slide {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    margin: -150px 0 0 -150px;
+    opacity: 0;
+    transform: rotateY(0deg) translateZ(200px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform-style: preserve-3d;
+}
+
+.spiral-slide.active {
+    opacity: 1;
+    transform: rotateY(0deg) translateZ(200px) scale(1);
+}
+
+.spiral-slide.prev {
+    opacity: 0.3;
+    transform: rotateY(-90deg) translateZ(100px) scale(0.8);
+}
+
+.spiral-slide.next {
+    opacity: 0.3;
+    transform: rotateY(90deg) translateZ(100px) scale(0.8);
+}
+
+.spiral-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.spiral-content {
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px 20px;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+}
+
+.spiral-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.spiral-content p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.spiral-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(102, 126, 234, 0.9);
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: white;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.spiral-btn:hover {
+    background: #667eea;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.spiral-btn.prev {
+    left: -30px;
+}
+
+.spiral-btn.next {
+    right: -30px;
+}
+
+.spiral-dots {
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.spiral-dots .dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(102, 126, 234, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.spiral-dots .dot.active {
+    background: #667eea;
+    transform: scale(1.3);
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+}
+
+/* 8. Accordion Image Carousel */
+.accordion-carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 500px;
+    overflow: hidden;
+}
+
+.accordion-carousel {
+    display: flex;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+    width: 100%;
+}
+
+.accordion-slide {
+    flex: 0 0 25%;
+    height: 100%;
+    position: relative;
+    transition: flex 0.6s ease-in-out;
+    overflow: hidden;
+    opacity: 0.7;
+}
+
+.accordion-slide.active {
+    flex: 0 0 50%;
+    opacity: 1;
+}
+
+.accordion-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.accordion-slide.active img {
+    transform: scale(1.05);
+}
+
+.accordion-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    color: white;
+    padding: 30px;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.6s ease 0.3s;
+}
+
+.accordion-slide.active .accordion-content {
+    transform: translateY(0);
+}
+
+.accordion-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.accordion-content p {
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.accordion-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(102, 126, 234, 0.9);
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: white;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.accordion-btn:hover {
+    background: #667eea;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.accordion-btn.prev {
+    left: -30px;
+}
+
+.accordion-btn.next {
+    right: -30px;
+}
+
+.accordion-dots {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.accordion-dots .dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(102, 126, 234, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.accordion-dots .dot.active {
+    background: #667eea;
+    transform: scale(1.3);
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+}
+
+/* 9. Magnetic Image Carousel */
+.magnetic-carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+}
+
+.magnetic-carousel {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.magnetic-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: scale(0.8) rotate(5deg);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.magnetic-slide.active {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+.magnetic-slide.prev {
+    transform: scale(0.6) rotate(-10deg);
+}
+
+.magnetic-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.magnetic-slide.active img {
+    transform: scale(1.05);
+}
+
+.magnetic-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    color: white;
+    padding: 40px;
+    text-align: center;
+    transform: translateY(100%) rotateX(90deg);
+    transition: transform 0.6s ease 0.3s;
+}
+
+.magnetic-slide.active .magnetic-content {
+    transform: translateY(0) rotateX(0deg);
+}
+
+.magnetic-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.magnetic-content p {
+    font-size: 1.2rem;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.magnetic-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: white;
+    transition: all 0.3s ease;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+}
+
+.magnetic-btn:hover {
+    background: rgba(0, 0, 0, 0.9);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.magnetic-btn.prev {
+    left: 30px;
+}
+
+.magnetic-btn.next {
+    right: 30px;
+}
+
+.magnetic-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.magnetic-dots .dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.magnetic-dots .dot.active {
+    background: white;
+    transform: scale(1.3);
+    border-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* 10. Particle Image Carousel */
+.particle-carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.3);
+}
+
+.particle-carousel {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.particle-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.particle-slide.active {
+    opacity: 1;
+}
+
+.particle-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.particle-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    color: white;
+    padding: 40px;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.6s ease 0.3s;
+}
+
+.particle-slide.active .particle-content {
+    transform: translateY(0);
+}
+
+.particle-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.particle-content p {
+    font-size: 1.2rem;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: float 6s infinite ease-in-out;
+}
+
+.particle:nth-child(1) {
+    top: 20%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.particle:nth-child(2) {
+    top: 30%;
+    left: 80%;
+    animation-delay: 1s;
+}
+
+.particle:nth-child(3) {
+    top: 70%;
+    left: 30%;
+    animation-delay: 2s;
+}
+
+.particle:nth-child(4) {
+    top: 60%;
+    left: 70%;
+    animation-delay: 3s;
+}
+
+.particle:nth-child(5) {
+    top: 40%;
+    left: 50%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(-20px) rotate(180deg);
+        opacity: 1;
+    }
+}
+
+.particle-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(102, 126, 234, 0.9);
+    border: none;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: white;
+    transition: all 0.3s ease;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+}
+
+.particle-btn:hover {
+    background: #667eea;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.particle-btn.prev {
+    left: 30px;
+}
+
+.particle-btn.next {
+    right: 30px;
+}
+
+.particle-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.particle-dots .dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(102, 126, 234, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.particle-dots .dot.active {
+    background: #667eea;
+    transform: scale(1.3);
+    border-color: rgba(102, 126, 234, 0.8);
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+}
+
+/* 11. Morphing Image Carousel */
+.morphing-carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.3);
+}
+
+.morphing-carousel {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.morphing-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.morphing-slide.active {
+    opacity: 1;
+}
+
+.morphing-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.morphing-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    color: white;
+    padding: 40px;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.6s ease 0.3s;
+}
+
+.morphing-slide.active .morphing-content {
+    transform: translateY(0);
+}
+
+.morphing-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.morphing-content p {
+    font-size: 1.2rem;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.morphing-shapes {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.shape {
+    position: absolute;
+    animation: morph 4s infinite ease-in-out;
+    opacity: 0.8;
+}
+
+.shape.circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    top: -30px;
+    left: -30px;
+    animation-delay: 0s;
+}
+
+.shape.triangle {
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 52px solid #45b7d1;
+    top: -26px;
+    left: 0;
+    animation-delay: 1.3s;
+}
+
+.shape.square {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, #96ceb4, #feca57);
+    top: 0;
+    left: 0;
+    animation-delay: 2.6s;
+}
+
+@keyframes morph {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.8;
+    }
+    25% {
+        transform: scale(1.2) rotate(90deg);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(0.8) rotate(180deg);
+        opacity: 0.6;
+    }
+    75% {
+        transform: scale(1.1) rotate(270deg);
+        opacity: 0.9;
+    }
+}
+
+.morphing-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 107, 107, 0.9);
+    border: none;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: white;
+    transition: all 0.3s ease;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+}
+
+.morphing-btn:hover {
+    background: #ff6b6b;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.morphing-btn.prev {
+    left: 30px;
+}
+
+.morphing-btn.next {
+    right: 30px;
+}
+
+.morphing-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.morphing-dots .dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(255, 107, 107, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.morphing-dots .dot.active {
+    background: #ff6b6b;
+    transform: scale(1.3);
+    border-color: rgba(255, 107, 107, 0.8);
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+}
+
+/* 12. Wave Image Carousel */
+.wave-carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.3);
+}
+
+.wave-carousel {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.wave-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.wave-slide.active {
+    opacity: 1;
+}
+
+.wave-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.wave-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    color: white;
+    padding: 40px;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.6s ease 0.3s;
+    z-index: 5;
+}
+
+.wave-slide.active .wave-content {
+    transform: translateY(0);
+}
+
+.wave-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.wave-content p {
+    font-size: 1.2rem;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.wave-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.wave {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
+    border-radius: 50%;
+    animation: waveMotion 6s infinite ease-in-out;
+    opacity: 0.6;
+}
+
+.wave1 {
+    top: -50%;
+    left: -50%;
+    animation-delay: 0s;
+}
+
+.wave2 {
+    top: -30%;
+    left: -30%;
+    animation-delay: 2s;
+}
+
+.wave3 {
+    top: -10%;
+    left: -10%;
+    animation-delay: 4s;
+}
+
+@keyframes waveMotion {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scale(1.2) rotate(180deg);
+        opacity: 0.6;
+    }
+}
+
+.wave-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 255, 255, 0.9);
+    border: none;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: white;
+    transition: all 0.3s ease;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+}
+
+.wave-btn:hover {
+    background: #00ffff;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.wave-btn.prev {
+    left: 30px;
+}
+
+.wave-btn.next {
+    right: 30px;
+}
+
+.wave-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.wave-dots .dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(0, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.wave-dots .dot.active {
+    background: #00ffff;
+    transform: scale(1.3);
+    border-color: rgba(0, 255, 255, 0.8);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+/* 13. Matrix Image Carousel */
+.matrix-carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.3);
+    background: #000;
+}
+
+.matrix-carousel {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.matrix-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.matrix-slide.active {
+    opacity: 1;
+}
+
+.matrix-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: hue-rotate(120deg) saturate(1.5);
+}
+
+.matrix-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    color: #00ff00;
+    padding: 40px;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.6s ease 0.3s;
+    font-family: 'Courier New', monospace;
+    z-index: 5;
+}
+
+.matrix-slide.active .matrix-content {
+    transform: translateY(0);
+}
+
+.matrix-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 0 0 10px #00ff00;
+    color: #00ff00;
+}
+
+.matrix-content p {
+    font-size: 1.2rem;
+    margin: 0;
+    line-height: 1.6;
+    color: #00ff00;
+}
+
+.matrix-code {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.code-line {
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, #00ff00, transparent);
+    animation: matrixRain 3s infinite linear;
+    opacity: 0.8;
+}
+
+.code-line:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.code-line:nth-child(2) {
+    left: 30%;
+    animation-delay: 0.5s;
+}
+
+.code-line:nth-child(3) {
+    left: 50%;
+    animation-delay: 1s;
+}
+
+.code-line:nth-child(4) {
+    left: 70%;
+    animation-delay: 1.5s;
+}
+
+.code-line:nth-child(5) {
+    left: 90%;
+    animation-delay: 2s;
+}
+
+@keyframes matrixRain {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+.matrix-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 255, 0, 0.9);
+    border: none;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: #000;
+    transition: all 0.3s ease;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+}
+
+.matrix-btn:hover {
+    background: #00ff00;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.8);
+}
+
+.matrix-btn.prev {
+    left: 30px;
+}
+
+.matrix-btn.next {
+    right: 30px;
+}
+
+.matrix-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.matrix-dots .dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(0, 255, 0, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.matrix-dots .dot.active {
+    background: #00ff00;
+    transform: scale(1.3);
+    border-color: rgba(0, 255, 0, 0.8);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+}
+
+/* 14. Kaleidoscope Image Carousel */
+.kaleidoscope-carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #1a1a2e, #16213e);
+}
+
+.kaleidoscope-carousel {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(255, 0, 150, 0.3);
+}
+
+.kaleidoscope-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    border-radius: 50%;
+}
+
+.kaleidoscope-slide.active {
+    opacity: 1;
+}
+
+.kaleidoscope-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.kaleidoscope-content {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px 30px;
+    text-align: center;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    z-index: 5;
+}
+
+.kaleidoscope-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.kaleidoscope-content p {
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.kaleidoscope-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.pattern-segment {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background: linear-gradient(45deg, rgba(255, 0, 150, 0.3), rgba(0, 150, 255, 0.3));
+    animation: kaleidoscopeRotate 8s infinite linear;
+    transform-origin: 100% 100%;
+}
+
+.pattern-segment:nth-child(1) {
+    top: 0;
+    left: 0;
+    transform: rotate(0deg);
+}
+
+.pattern-segment:nth-child(2) {
+    top: 0;
+    right: 0;
+    transform: rotate(60deg);
+}
+
+.pattern-segment:nth-child(3) {
+    bottom: 0;
+    right: 0;
+    transform: rotate(120deg);
+}
+
+.pattern-segment:nth-child(4) {
+    bottom: 0;
+    left: 0;
+    transform: rotate(180deg);
+}
+
+.pattern-segment:nth-child(5) {
+    top: 50%;
+    left: 0;
+    transform: rotate(240deg);
+}
+
+.pattern-segment:nth-child(6) {
+    top: 50%;
+    right: 0;
+    transform: rotate(300deg);
+}
+
+@keyframes kaleidoscopeRotate {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.1);
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+.kaleidoscope-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 0, 150, 0.9);
+    border: none;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: white;
+    transition: all 0.3s ease;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+}
+
+.kaleidoscope-btn:hover {
+    background: #ff0096;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.kaleidoscope-btn.prev {
+    left: 30px;
+}
+
+.kaleidoscope-btn.next {
+    right: 30px;
+}
+
+.kaleidoscope-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.kaleidoscope-dots .dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(255, 0, 150, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.kaleidoscope-dots .dot.active {
+    background: #ff0096;
+    transform: scale(1.3);
+    border-color: rgba(255, 0, 150, 0.8);
+    box-shadow: 0 0 20px rgba(255, 0, 150, 0.5);
+}
+
+/* 15. Holographic Image Carousel */
+.holographic-carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #0a0a0a, #1a1a2e, #16213e);
+}
+
+.holographic-carousel {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.holographic-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.holographic-slide.active {
+    opacity: 1;
+}
+
+.holographic-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: hue-rotate(200deg) saturate(1.2) brightness(1.1);
+}
+
+.holographic-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    color: #00ffff;
+    padding: 40px;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.6s ease 0.3s;
+    font-family: 'Courier New', monospace;
+    z-index: 5;
+}
+
+.holographic-slide.active .holographic-content {
+    transform: translateY(0);
+}
+
+.holographic-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 0 0 20px #00ffff;
+    color: #00ffff;
+}
+
+.holographic-content p {
+    font-size: 1.2rem;
+    margin: 0;
+    line-height: 1.6;
+    color: #00ffff;
+}
+
+.holographic-effects {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.holo-line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00ffff, transparent);
+    animation: holographicScan 4s infinite ease-in-out;
+}
+
+.holo-line:nth-child(1) {
+    top: 20%;
+    animation-delay: 0s;
+}
+
+.holo-line:nth-child(2) {
+    top: 40%;
+    animation-delay: 1s;
+}
+
+.holo-line:nth-child(3) {
+    top: 60%;
+    animation-delay: 2s;
+}
+
+.holo-line:nth-child(4) {
+    top: 80%;
+    animation-delay: 3s;
+}
+
+@keyframes holographicScan {
+    0%, 100% {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+.holographic-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 255, 255, 0.9);
+    border: none;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: #000;
+    transition: all 0.3s ease;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.holographic-btn:hover {
+    background: #00ffff;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+}
+
+.holographic-btn.prev {
+    left: 30px;
+}
+
+.holographic-btn.next {
+    right: 30px;
+}
+
+.holographic-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.holographic-dots .dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(0, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.holographic-dots .dot.active {
+    background: #00ffff;
+    transform: scale(1.3);
+    border-color: rgba(0, 255, 255, 0.8);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+/* 16. Glitch Image Carousel */
+.glitch-carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.3);
+    background: #000;
+}
+
+.glitch-carousel {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.glitch-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.glitch-slide.active {
+    opacity: 1;
+}
+
+.glitch-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: hue-rotate(180deg) saturate(2) contrast(1.5);
+}
+
+.glitch-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    color: #ff0080;
+    padding: 40px;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.6s ease 0.3s;
+    font-family: 'Courier New', monospace;
+    z-index: 5;
+}
+
+.glitch-slide.active .glitch-content {
+    transform: translateY(0);
+}
+
+.glitch-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 0 0 10px #ff0080;
+    color: #ff0080;
+}
+
+.glitch-content p {
+    font-size: 1.2rem;
+    margin: 0;
+    line-height: 1.6;
+    color: #ff0080;
+}
+
+.glitch-effects {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.glitch-line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ff0080, transparent);
+    animation: glitchScan 2s infinite ease-in-out;
+}
+
+.glitch-line:nth-child(1) {
+    top: 25%;
+    animation-delay: 0s;
+}
+
+.glitch-line:nth-child(2) {
+    top: 50%;
+    animation-delay: 0.7s;
+}
+
+.glitch-line:nth-child(3) {
+    top: 75%;
+    animation-delay: 1.4s;
+}
+
+@keyframes glitchScan {
+    0%, 100% {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+.glitch-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 0, 128, 0.9);
+    border: none;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: white;
+    transition: all 0.3s ease;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(255, 0, 128, 0.5);
+}
+
+.glitch-btn:hover {
+    background: #ff0080;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 0 30px rgba(255, 0, 128, 0.8);
+}
+
+.glitch-btn.prev {
+    left: 30px;
+}
+
+.glitch-btn.next {
+    right: 30px;
+}
+
+.glitch-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.glitch-dots .dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(255, 0, 128, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.glitch-dots .dot.active {
+    background: #ff0080;
+    transform: scale(1.3);
+    border-color: rgba(255, 0, 128, 0.8);
+    box-shadow: 0 0 20px rgba(255, 0, 128, 0.5);
+}
+
+/* 17. Neon Image Carousel */
+.neon-carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #0a0a0a, #1a0a2e, #16213e);
+}
+
+.neon-carousel {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.neon-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.neon-slide.active {
+    opacity: 1;
+}
+
+.neon-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: hue-rotate(280deg) saturate(1.5) brightness(1.2);
+}
+
+.neon-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    color: #00ffff;
+    padding: 40px;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.6s ease 0.3s;
+    z-index: 5;
+}
+
+.neon-slide.active .neon-content {
+    transform: translateY(0);
+}
+
+.neon-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 0 0 20px #00ffff;
+    color: #00ffff;
+}
+
+.neon-content p {
+    font-size: 1.2rem;
+    margin: 0;
+    line-height: 1.6;
+    color: #00ffff;
+}
+
+.neon-effects {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.neon-ring {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #00ffff;
+    border-radius: 50%;
+    animation: neonPulse 3s infinite ease-in-out;
+    opacity: 0.6;
+}
+
+.neon-ring:nth-child(1) {
+    top: 20%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.neon-ring:nth-child(2) {
+    top: 50%;
+    right: 20%;
+    animation-delay: 1s;
+}
+
+.neon-ring:nth-child(3) {
+    bottom: 20%;
+    left: 50%;
+    animation-delay: 2s;
+}
+
+@keyframes neonPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+}
+
+.neon-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 255, 255, 0.9);
+    border: none;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: #000;
+    transition: all 0.3s ease;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.neon-btn:hover {
+    background: #00ffff;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+}
+
+.neon-btn.prev {
+    left: 30px;
+}
+
+.neon-btn.next {
+    right: 30px;
+}
+
+.neon-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.neon-dots .dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(0, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.neon-dots .dot.active {
+    background: #00ffff;
+    transform: scale(1.3);
+    border-color: rgba(0, 255, 255, 0.8);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+/* 18. Liquid Image Carousel */
+.liquid-carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #0f4c75, #3282b8, #bbe1fa);
+}
+
+.liquid-carousel {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.liquid-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.liquid-slide.active {
+    opacity: 1;
+}
+
+.liquid-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: hue-rotate(200deg) saturate(1.2) brightness(1.1);
+}
+
+.liquid-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    color: white;
+    padding: 40px;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.6s ease 0.3s;
+    z-index: 5;
+}
+
+.liquid-slide.active .liquid-content {
+    transform: translateY(0);
+}
+
+.liquid-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.liquid-content p {
+    font-size: 1.2rem;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.liquid-effects {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.liquid-blob {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(187, 225, 250, 0.6), rgba(50, 130, 184, 0.3));
+    border-radius: 50%;
+    animation: liquidFlow 4s infinite ease-in-out;
+}
+
+.liquid-blob:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.liquid-blob:nth-child(2) {
+    top: 60%;
+    right: 15%;
+    animation-delay: 1.3s;
+}
+
+.liquid-blob:nth-child(3) {
+    bottom: 20%;
+    left: 30%;
+    animation-delay: 2.6s;
+}
+
+@keyframes liquidFlow {
+    0%, 100% {
+        transform: scale(1) translateY(0);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scale(1.3) translateY(-20px);
+        opacity: 0.8;
+    }
+}
+
+.liquid-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(187, 225, 250, 0.9);
+    border: none;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: #0f4c75;
+    transition: all 0.3s ease;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+}
+
+.liquid-btn:hover {
+    background: #bbe1fa;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.liquid-btn.prev {
+    left: 30px;
+}
+
+.liquid-btn.next {
+    right: 30px;
+}
+
+.liquid-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.liquid-dots .dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(187, 225, 250, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.liquid-dots .dot.active {
+    background: #bbe1fa;
+    transform: scale(1.3);
+    border-color: rgba(187, 225, 250, 0.8);
+    box-shadow: 0 0 20px rgba(187, 225, 250, 0.5);
+}
+
+/* 19. Glass Image Carousel */
+.glass-carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #f8f9fa, #e9ecef, #dee2e6);
+}
+
+.glass-carousel {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.glass-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.glass-slide.active {
+    opacity: 1;
+}
+
+.glass-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.glass-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(248, 249, 250, 0.9));
+    color: #495057;
+    padding: 40px;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.6s ease 0.3s;
+    backdrop-filter: blur(10px);
+    z-index: 5;
+}
+
+.glass-slide.active .glass-content {
+    transform: translateY(0);
+}
+
+.glass-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.glass-content p {
+    font-size: 1.2rem;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.glass-effects {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.glass-shard {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, rgba(248, 249, 250, 0.3), rgba(233, 236, 239, 0.6));
+    border-radius: 50%;
+    animation: glassShimmer 3s infinite ease-in-out;
+}
+
+.glass-shard:nth-child(1) {
+    top: 20%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.glass-shard:nth-child(2) {
+    top: 60%;
+    right: 20%;
+    animation-delay: 1s;
+}
+
+.glass-shard:nth-child(3) {
+    bottom: 20%;
+    left: 50%;
+    animation-delay: 2s;
+}
+
+@keyframes glassShimmer {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scale(1.2) rotate(180deg);
+        opacity: 0.6;
+    }
+}
+
+.glass-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(248, 249, 250, 0.9);
+    border: none;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: #495057;
+    transition: all 0.3s ease;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.glass-btn:hover {
+    background: #f8f9fa;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.glass-btn.prev {
+    left: 30px;
+}
+
+.glass-btn.next {
+    right: 30px;
+}
+
+.glass-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.glass-dots .dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(248, 249, 250, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.glass-dots .dot.active {
+    background: #f8f9fa;
+    transform: scale(1.3);
+    border-color: rgba(248, 249, 250, 0.8);
+    box-shadow: 0 0 20px rgba(248, 249, 250, 0.5);
+}
+
+/* 20. Fire Image Carousel */
+.fire-carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #2c1810, #8b4513, #ff4500);
+}
+
+.fire-carousel {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.fire-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.fire-slide.active {
+    opacity: 1;
+}
+
+.fire-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: hue-rotate(30deg) saturate(1.5) brightness(1.2);
+}
+
+.fire-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    color: #ff6b35;
+    padding: 40px;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.6s ease 0.3s;
+    z-index: 5;
+}
+
+.fire-slide.active .fire-content {
+    transform: translateY(0);
+}
+
+.fire-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 0 0 20px #ff6b35;
+    color: #ff6b35;
+}
+
+.fire-content p {
+    font-size: 1.2rem;
+    margin: 0;
+    line-height: 1.6;
+    color: #ff6b35;
+}
+
+.fire-effects {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.flame {
+    position: absolute;
+    width: 80px;
+    height: 120px;
+    background: linear-gradient(to top, #ff4500, #ff6b35, #ffa500);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    animation: flameFlicker 2s infinite ease-in-out;
+}
+
+.flame:nth-child(1) {
+    top: 20%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.flame:nth-child(2) {
+    top: 40%;
+    right: 25%;
+    animation-delay: 0.7s;
+}
+
+.flame:nth-child(3) {
+    bottom: 20%;
+    left: 50%;
+    animation-delay: 1.4s;
+}
+
+@keyframes flameFlicker {
+    0%, 100% {
+        transform: scale(1) rotate(-2deg);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.1) rotate(2deg);
+        opacity: 1;
+    }
+}
+
+.fire-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 107, 53, 0.9);
+    border: none;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: white;
+    transition: all 0.3s ease;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
+}
+
+.fire-btn:hover {
+    background: #ff6b35;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 0 30px rgba(255, 107, 53, 0.8);
+}
+
+.fire-btn.prev {
+    left: 30px;
+}
+
+.fire-btn.next {
+    right: 30px;
+}
+
+.fire-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.fire-dots .dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(255, 107, 53, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.fire-dots .dot.active {
+    background: #ff6b35;
+    transform: scale(1.3);
+    border-color: rgba(255, 107, 53, 0.8);
+    box-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
+}
+
+/* 21. Ice Image Carousel */
+.ice-carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #0c4a6e, #075985, #0284c7);
+}
+
+.ice-carousel {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.ice-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.ice-slide.active {
+    opacity: 1;
+}
+
+.ice-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: hue-rotate(200deg) saturate(1.2) brightness(1.1);
+}
+
+.ice-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    color: #7dd3fc;
+    padding: 40px;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.6s ease 0.3s;
+    z-index: 5;
+}
+
+.ice-slide.active .ice-content {
+    transform: translateY(0);
+}
+
+.ice-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 0 0 20px #7dd3fc;
+    color: #7dd3fc;
+}
+
+.ice-content p {
+    font-size: 1.2rem;
+    margin: 0;
+    line-height: 1.6;
+    color: #7dd3fc;
+}
+
+.ice-effects {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.ice-crystal {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(45deg, rgba(125, 211, 252, 0.6), rgba(2, 132, 199, 0.3));
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    animation: iceFloat 4s infinite ease-in-out;
+}
+
+.ice-crystal:nth-child(1) {
+    top: 20%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.ice-crystal:nth-child(2) {
+    top: 60%;
+    right: 20%;
+    animation-delay: 1.3s;
+}
+
+.ice-crystal:nth-child(3) {
+    bottom: 20%;
+    left: 50%;
+    animation-delay: 2.6s;
+}
+
+@keyframes iceFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translateY(-20px) rotate(180deg);
+        opacity: 0.8;
+    }
+}
+
+.ice-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(125, 211, 252, 0.9);
+    border: none;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: #0c4a6e;
+    transition: all 0.3s ease;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(125, 211, 252, 0.5);
+}
+
+.ice-btn:hover {
+    background: #7dd3fc;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 0 30px rgba(125, 211, 252, 0.8);
+}
+
+.ice-btn.prev {
+    left: 30px;
+}
+
+.ice-btn.next {
+    right: 30px;
+}
+
+.ice-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.ice-dots .dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(125, 211, 252, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.ice-dots .dot.active {
+    background: #7dd3fc;
+    transform: scale(1.3);
+    border-color: rgba(125, 211, 252, 0.8);
+    box-shadow: 0 0 20px rgba(125, 211, 252, 0.5);
+}
+
+/* 22. Galaxy Image Carousel */
+.galaxy-carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #0f0c29, #24243e, #302b63);
+}
+
+.galaxy-carousel {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.galaxy-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.galaxy-slide.active {
+    opacity: 1;
+}
+
+.galaxy-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: hue-rotate(250deg) saturate(1.3) brightness(1.1);
+}
+
+.galaxy-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    color: #a855f7;
+    padding: 40px;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.6s ease 0.3s;
+    z-index: 5;
+}
+
+.galaxy-slide.active .galaxy-content {
+    transform: translateY(0);
+}
+
+.galaxy-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 0 0 20px #a855f7;
+    color: #a855f7;
+}
+
+.galaxy-content p {
+    font-size: 1.2rem;
+    margin: 0;
+    line-height: 1.6;
+    color: #a855f7;
+}
+
+.galaxy-effects {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #ffffff;
+    border-radius: 50%;
+    animation: starTwinkle 3s infinite ease-in-out;
+}
+
+.star:nth-child(1) {
+    top: 20%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.star:nth-child(2) {
+    top: 40%;
+    right: 25%;
+    animation-delay: 0.6s;
+}
+
+.star:nth-child(3) {
+    bottom: 30%;
+    left: 30%;
+    animation-delay: 1.2s;
+}
+
+.star:nth-child(4) {
+    top: 60%;
+    right: 40%;
+    animation-delay: 1.8s;
+}
+
+.star:nth-child(5) {
+    bottom: 20%;
+    right: 20%;
+    animation-delay: 2.4s;
+}
+
+@keyframes starTwinkle {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+
+.galaxy-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(168, 85, 247, 0.9);
+    border: none;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: white;
+    transition: all 0.3s ease;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+}
+
+.galaxy-btn:hover {
+    background: #a855f7;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.8);
+}
+
+.galaxy-btn.prev {
+    left: 30px;
+}
+
+.galaxy-btn.next {
+    right: 30px;
+}
+
+.galaxy-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.galaxy-dots .dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(168, 85, 247, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.galaxy-dots .dot.active {
+    background: #a855f7;
+    transform: scale(1.3);
+    border-color: rgba(168, 85, 247, 0.8);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+}
+
+/* 23. Crystal Image Carousel */
+.crystal-carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #1e1b4b, #312e81, #4c1d95);
+}
+
+.crystal-carousel {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.crystal-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.crystal-slide.active {
+    opacity: 1;
+}
+
+.crystal-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: hue-rotate(280deg) saturate(1.4) brightness(1.2);
+}
+
+.crystal-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    color: #c084fc;
+    padding: 40px;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.6s ease 0.3s;
+    z-index: 5;
+}
+
+.crystal-slide.active .crystal-content {
+    transform: translateY(0);
+}
+
+.crystal-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 0 0 20px #c084fc;
+    color: #c084fc;
+}
+
+.crystal-content p {
+    font-size: 1.2rem;
+    margin: 0;
+    line-height: 1.6;
+    color: #c084fc;
+}
+
+.crystal-effects {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.crystal-shard {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, rgba(192, 132, 252, 0.6), rgba(76, 29, 149, 0.3));
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    animation: crystalSparkle 3s infinite ease-in-out;
+}
+
+.crystal-shard:nth-child(1) {
+    top: 20%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.crystal-shard:nth-child(2) {
+    top: 60%;
+    right: 20%;
+    animation-delay: 1s;
+}
+
+.crystal-shard:nth-child(3) {
+    bottom: 20%;
+    left: 50%;
+    animation-delay: 2s;
+}
+
+@keyframes crystalSparkle {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scale(1.3) rotate(180deg);
+        opacity: 0.9;
+    }
+}
+
+.crystal-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(192, 132, 252, 0.9);
+    border: none;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: white;
+    transition: all 0.3s ease;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(192, 132, 252, 0.5);
+}
+
+.crystal-btn:hover {
+    background: #c084fc;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 0 30px rgba(192, 132, 252, 0.8);
+}
+
+.crystal-btn.prev {
+    left: 30px;
+}
+
+.crystal-btn.next {
+    right: 30px;
+}
+
+.crystal-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.crystal-dots .dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(192, 132, 252, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.crystal-dots .dot.active {
+    background: #c084fc;
+    transform: scale(1.3);
+    border-color: rgba(192, 132, 252, 0.8);
+    box-shadow: 0 0 20px rgba(192, 132, 252, 0.5);
+}
+
+/* Enhanced Responsive Design Fixes */
+@media (max-width: 768px) {
+    .kaleidoscope-carousel {
+        width: 300px;
+        height: 300px;
+    }
+
+    .spiral-slide {
+        width: 200px;
+        height: 200px;
+        margin: -100px 0 0 -100px;
+    }
+
+    .cube-carousel {
+        width: 300px;
+        height: 300px;
+    }
+
+    .cube-face {
+        width: 300px;
+        height: 300px;
+    }
+
+    .cube-face.front {
+        transform: rotateY(0deg) translateZ(150px);
+    }
+
+    .cube-face.right {
+        transform: rotateY(90deg) translateZ(150px);
+    }
+
+    .cube-face.back {
+        transform: rotateY(180deg) translateZ(150px);
+    }
+
+    .cube-face.left {
+        transform: rotateY(-90deg) translateZ(150px);
+    }
+
+    .cube-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .cube-btn.prev {
+        left: 10px;
+    }
+
+    .cube-btn.next {
+        right: 10px;
+    }
+    
+    /* Fix button positioning for all carousels */
+    .carousel-btn,
+    .slidein-btn,
+    .zoom-btn,
+    .flip-btn,
+    .parallax-btn,
+    .spiral-btn,
+    .accordion-btn,
+    .magnetic-btn,
+    .particle-btn,
+    .morphing-btn,
+    .wave-btn,
+    .matrix-btn,
+    .kaleidoscope-btn,
+    .holographic-btn,
+    .glitch-btn,
+    .neon-btn,
+    .liquid-btn,
+    .glass-btn,
+    .fire-btn,
+    .ice-btn,
+    .galaxy-btn,
+    .crystal-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    .carousel-btn.prev,
+    .slidein-btn.prev,
+    .zoom-btn.prev,
+    .flip-btn.prev,
+    .parallax-btn.prev,
+    .spiral-btn.prev,
+    .accordion-btn.prev,
+    .magnetic-btn.prev,
+    .particle-btn.prev,
+    .morphing-btn.prev,
+    .wave-btn.prev,
+    .matrix-btn.prev,
+    .kaleidoscope-btn.prev,
+    .holographic-btn.prev,
+    .glitch-btn.prev,
+    .neon-btn.prev,
+    .liquid-btn.prev,
+    .glass-btn.prev,
+    .fire-btn.prev,
+    .ice-btn.prev,
+    .galaxy-btn.prev,
+    .crystal-btn.prev {
+        left: 10px;
+    }
+    
+    .carousel-btn.next,
+    .slidein-btn.next,
+    .zoom-btn.next,
+    .flip-btn.next,
+    .parallax-btn.next,
+    .spiral-btn.next,
+    .accordion-btn.next,
+    .magnetic-btn.next,
+    .particle-btn.next,
+    .morphing-btn.next,
+    .wave-btn.next,
+    .matrix-btn.next,
+    .kaleidoscope-btn.next,
+    .holographic-btn.next,
+    .glitch-btn.next,
+    .neon-btn.next,
+    .liquid-btn.next,
+    .glass-btn.next,
+    .fire-btn.next,
+    .ice-btn.next,
+    .galaxy-btn.next,
+    .crystal-btn.next {
+        right: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .kaleidoscope-carousel {
+        width: 250px;
+        height: 250px;
+    }
+
+    .spiral-slide {
+        width: 150px;
+        height: 150px;
+        margin: -75px 0 0 -75px;
+    }
+
+    .cube-carousel {
+        width: 250px;
+        height: 250px;
+    }
+
+    .cube-face {
+        width: 250px;
+        height: 250px;
+    }
+
+    .cube-face.front {
+        transform: rotateY(0deg) translateZ(125px);
+    }
+
+    .cube-face.right {
+        transform: rotateY(90deg) translateZ(125px);
+    }
+
+    .cube-face.back {
+        transform: rotateY(180deg) translateZ(125px);
+    }
+
+    .cube-face.left {
+        transform: rotateY(-90deg) translateZ(125px);
+    }
+
+    .cube-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .cube-btn.prev {
+        left: 5px;
+    }
+
+    .cube-btn.next {
+        right: 5px;
+    }
+    
+    /* Fix button positioning for all carousels on small screens */
+    .carousel-btn,
+    .slidein-btn,
+    .zoom-btn,
+    .flip-btn,
+    .parallax-btn,
+    .spiral-btn,
+    .accordion-btn,
+    .magnetic-btn,
+    .particle-btn,
+    .morphing-btn,
+    .wave-btn,
+    .matrix-btn,
+    .kaleidoscope-btn,
+    .holographic-btn,
+    .glitch-btn,
+    .neon-btn,
+    .liquid-btn,
+    .glass-btn,
+    .fire-btn,
+    .ice-btn,
+    .galaxy-btn,
+    .crystal-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .carousel-btn.prev,
+    .slidein-btn.prev,
+    .zoom-btn.prev,
+    .flip-btn.prev,
+    .parallax-btn.prev,
+    .spiral-btn.prev,
+    .accordion-btn.prev,
+    .magnetic-btn.prev,
+    .particle-btn.prev,
+    .morphing-btn.prev,
+    .wave-btn.prev,
+    .matrix-btn.prev,
+    .kaleidoscope-btn.prev,
+    .holographic-btn.prev,
+    .glitch-btn.prev,
+    .neon-btn.prev,
+    .liquid-btn.prev,
+    .glass-btn.prev,
+    .fire-btn.prev,
+    .ice-btn.prev,
+    .galaxy-btn.prev,
+    .crystal-btn.prev {
+        left: 5px;
+    }
+    
+    .carousel-btn.next,
+    .slidein-btn.next,
+    .zoom-btn.next,
+    .flip-btn.next,
+    .parallax-btn.next,
+    .spiral-btn.next,
+    .accordion-btn.next,
+    .magnetic-btn.next,
+    .particle-btn.next,
+    .morphing-btn.next,
+    .wave-btn.next,
+    .matrix-btn.next,
+    .kaleidoscope-btn.next,
+    .holographic-btn.next,
+    .glitch-btn.next,
+    .neon-btn.next,
+    .liquid-btn.next,
+    .glass-btn.next,
+    .fire-btn.next,
+    .ice-btn.next,
+    .galaxy-btn.next,
+    .crystal-btn.next {
+        right: 5px;
+    }
+}
+
+/* Performance optimizations */
+.carousel-container,
+.cube-carousel-container,
+.slidein-carousel-container,
+.zoom-carousel-container,
+.flip-carousel-container,
+.parallax-carousel-container,
+.spiral-carousel-container,
+.accordion-carousel-container,
+.magnetic-carousel-container,
+.particle-carousel-container,
+.morphing-carousel-container,
+.wave-carousel-container,
+.matrix-carousel-container,
+.kaleidoscope-carousel-container,
+.holographic-carousel-container,
+.glitch-carousel-container,
+.neon-carousel-container,
+.liquid-carousel-container,
+.glass-carousel-container,
+.fire-carousel-container,
+.ice-carousel-container,
+.galaxy-carousel-container,
+.crystal-carousel-container {
+    will-change: transform;
+    contain: layout style paint;
+}
+
+/* Smooth transitions for all slides */
+.slide,
+.cube-face,
+.slidein-slide,
+.zoom-slide,
+.flip-slide,
+.parallax-slide,
+.spiral-slide,
+.accordion-slide,
+.magnetic-slide,
+.particle-slide,
+.morphing-slide,
+.wave-slide,
+.matrix-slide,
+.kaleidoscope-slide,
+.holographic-slide,
+.glitch-slide,
+.neon-slide,
+.liquid-slide,
+.glass-slide,
+.fire-slide,
+.ice-slide,
+.galaxy-slide,
+.crystal-slide {
+    will-change: opacity, transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
